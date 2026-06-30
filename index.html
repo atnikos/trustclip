@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction</title>
+  <meta name="description" content="TrustCLIP learns a lightweight, adversarially-trained projection that defends frozen CLIP/VLM features against generative inversion attacks while preserving downstream task utility. ECCV 2026." />
+
+  <!-- Social / preview cards -->
+  <meta property="og:title" content="TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction" />
+  <meta property="og:description" content="A lightweight adversarial projection that defends frozen CLIP/VLM features against generative inversion. ECCV 2026." />
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="venue">ECCV 2026</span>
+    <h1 class="title">TrustCLIP: Learning Private Visual Features<br />via Adversarial Reconstruction</h1>
+
+    <div class="authors">
+      <a href="https://atnikos.github.io/">Nikos Athanasiou</a><sup>1,2,&#42;</sup>,
+      Ilya A. Petrov<sup>1,3,&#42;</sup>,
+      Angela Yao<sup>1,4</sup>,
+      Shugao Ma<sup>1</sup>,
+      Eric Sauser<sup>1</sup>,
+      Edoardo Remelli<sup>1</sup>,
+      Shreyas Hampali<sup>1</sup>,
+      Johannes Sch&ouml;nberger<sup>1</sup>,
+      Fadime Sener<sup>1</sup>,
+      Bugra Tekin<sup>1</sup>
+    </div>
+
+    <p class="affil">
+      <sup>1</sup>Meta, Z&uuml;rich &nbsp;&middot;&nbsp;
+      <sup>2</sup>Max Planck Institute for Intelligent Systems, T&uuml;bingen &nbsp;&middot;&nbsp;
+      <sup>3</sup>University of T&uuml;bingen &nbsp;&middot;&nbsp;
+      <sup>4</sup>National University of Singapore
+    </p>
+    <p class="note"><sup>&#42;</sup>Work done during a Meta internship.</p>
+
+    <div class="links">
+      <!-- TODO: replace "#" with real URLs when available -->
+      <a class="btn" href="#" aria-disabled="true">&#128196;&nbsp; Paper</a>
+      <a class="btn" href="#" aria-disabled="true">&#128240;&nbsp; arXiv</a>
+      <a class="btn" href="#" aria-disabled="true">&#128187;&nbsp; Code</a>
+      <a class="btn" href="#bibtex">&#10078;&nbsp; BibTeX</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="teaser">
+    <img src="static/images/teaser.png" alt="TrustCLIP teaser: CLIP feature reconstructions vs. TrustCLIP-protected features." />
+    <p class="caption">
+      <b>TrustCLIP ensures privacy for visual understanding tasks while preserving task utility.</b>
+      Reconstructions from vanilla CLIP features reveal detailed, identity-revealing content, whereas
+      TrustCLIP features prevent meaningful recovery of the original image while retaining class semantics.
+      A VLM (LLaVA-SP) built on TrustCLIP stays competitive with the unprotected baseline across standard
+      benchmarks, and privacy metrics confirm substantially less reconstructible features.
+    </p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Vision and vision&ndash;language models rely on high-level visual representations that are increasingly
+      used across recognition, retrieval, and multimodal reasoning pipelines. However, recent advances in
+      generative modeling have shown that such features can often be inverted, enabling realistic
+      reconstructions of the underlying image and raising significant privacy risks. We revisit this problem
+      through the lens of reconstruction and propose <b>TrustCLIP</b>, a reconstruction-driven framework that
+      treats a feature-conditioned generator as an explicit privacy adversary. TrustCLIP learns a projection
+      between encoder features and downstream modules that is explicitly optimized to degrade the
+      reconstructions produced by generative attackers while retaining the necessary signals for downstream
+      tasks. Unlike prior defenses that rely on discriminative privacy metrics, TrustCLIP directly optimizes
+      against a generative reconstruction attacker, targeting a threat not captured by standard evaluation
+      protocols. We demonstrate its effectiveness in both conventional classification and multimodal large
+      language model pipelines. Across these settings, TrustCLIP consistently reduces the fidelity of
+      generative inversions while maintaining downstream task performance.
+    </p>
+  </section>
+
+  <section id="bibtex">
+    <h2>BibTeX</h2>
+    <pre>@inproceedings{athanasiou2026trustclip,
+  title     = {TrustCLIP: Learning Private Visual Features via Adversarial Reconstruction},
+  author    = {Athanasiou, Nikos and Petrov, Ilya A. and Yao, Angela and Ma, Shugao
+               and Sauser, Eric and Remelli, Edoardo and Hampali, Shreyas
+               and Sch{\"o}nberger, Johannes and Sener, Fadime and Tekin, Bugra},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</pre>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 The Authors. Project page template &mdash; placeholder; replace links before release.</p>
+  </div>
+</footer>
+
+</body>
+</html>
